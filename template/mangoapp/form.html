@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="icon"href="{% static 'images/img 2.jpg'%">
+</head>
+<body>
+{% if submitted %}
+<h1>feedback forms</h1>
+{% else %}
+<form method="post">
+    {{form.as_p}}
+    {% csrf_token %}
+    <input type="submit"id="sub",value="applied">
+</form>
+{% endif %}
+
+</body>
+</html>
